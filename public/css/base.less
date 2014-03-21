@@ -1,0 +1,87 @@
+// Improve by gavinning
+
+.display-box() {
+    display: -webkit-box;
+    display: box;
+}
+
+.box() {
+    display: -webkit-box;
+}
+
+.box-flex( @num: 1 ){
+    -webkit-box-flex: @num;
+}
+
+.box-pack( @args: center ){
+    -webkit-box-pack: @args;
+}
+
+.box-align( @args: center ){
+    -webkit-box-align: @args;
+}
+
+.box-orient( @args: vertical ){
+    -webkit-box-orient: @args;
+}
+
+.box-center(...) {
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+
+.background-size(...) {
+    -webkit-background-size: @arguments; /* Saf3-4 */
+            background-size: @arguments; /* Opera, IE9, Saf5.1, Chrome13.0, FF4.0 */
+}
+
+.bg( @url, @repeat: no-repeat, @size: auto ){
+    background: url( @url ) @repeat;
+    .background-size( @size );
+}
+
+.bgimg( @url, @repeat: no-repeat, @size: auto ){
+    background: url( '@{path}/@{url}' ) @repeat;
+    .background-size( @size );
+}
+
+.bgl( @c1, @c2 ){
+    background: -webkit-gradient(linear,left top,left bottom,from(@c1),to(@c2));
+}
+
+.radius(...) {
+      -webkit-border-radius: @arguments; /* Saf3-4, iOS 1-3.2, Android ≤1.6 */
+              border-radius: @arguments; /* Opera 10.5 IE9, Saf5, Chrome, FF4, iOS 4, Android 2.1+ */
+
+    /* useful if you don't want a bg color from leaking outside the border: */
+/*    -webkit-background-clip: padding-box;
+            background-clip: padding-box;*/
+}
+
+.box-shadow(...) {
+    -webkit-box-shadow: @arguments; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+            box-shadow: @arguments; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}
+
+.shadow(...) {
+    -webkit-box-shadow: @arguments; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+            box-shadow: @arguments; /* Opera 10.5, IE9, FF4+, Chrome 6+, iOS 5 */
+}
+
+.text-shadow(...) {
+    -webkit-text-shadow: @arguments;
+            text-shadow: @arguments;
+}
+
+.box-sizing( @args: border-box ){
+    -webkit-box-sizing: @args;
+            box-sizing: @args;
+}
+
+.transform(...) {
+    -webkit-transform: @arguments; /* Saf3.2+, Chrome */
+}
+
+.transition(...) {
+    -webkit-transition: @arguments;
+}

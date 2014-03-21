@@ -1,0 +1,241 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no"/>
+        <meta name="format-detection" content="telephone=no"/>
+        <meta name="author" content="Tencent..gavinning"/>
+        <meta name="copyright" content="Copyright (c) 1998-2012 Tencent."/>
+        <meta name="description" content="手机腾讯网"/>
+        <title>掌上NBA</title>
+        <script type="text/javascript">
+            window.NBA = {};
+            window.NBA.user = {
+                sid: "Abh9Fb_2XT-0A6y_k3fSUn5C",
+                uin: "26937544",
+                isLogin: true
+            };
+            window.NBA.isOs7 = (navigator.userAgent).indexOf('OS 7') !== -1;
+            window.NBA.apiUrl = "http://mudongliu.kf0309.3g.qq.com/infoapp/s";
+            window.NBA.apiUrl_live = "http://mudongliu.kf0309.3g.qq.com/live/s";
+        </script>
+        <style>
+            body{
+                -webkit-user-select: none;
+            }
+        </style>
+        
+        <link href="http://gavinning.kf0309.3g.qq.com/webapp_html/info/nba3/css/nba3.css" rel="stylesheet"type="text/css">
+        
+        <style type="text/css">
+            .virtualPage{display:none}
+            .virtualPage[selected='true']{display:block}
+            
+            .tl-flip{-webkit-transform: rotate3d(0,1,0,0deg);-webkit-transition-duration: 0.6s;-webkit-backface-visibility: hidden;}
+            .tl-fliped{-webkit-transform: rotate3d(0,1,0,-180deg);-webkit-transition-duration: 0.6s;-webkit-backface-visibility: hidden;}
+            .tl-scseal{
+                z-index:-1!important;
+                opacity: 0;
+                -webkit-transform: scale(2);
+            }
+            .tl-scsealed{
+                z-index: 100!important;
+                opacity: 1;
+                -webkit-backface-visibility: hidden;
+                -webkit-transform: scale(1);
+            }
+            
+            .like-count-copy{
+                position: absolute;
+                top: -2px;
+                -webkit-transform: scale(1);
+                opacity: 1;
+                z-index: 998;
+                padding-left: 0;
+                -webkit-transition: 0ms cubic-bezier(0.33,0.46,0.66,1);
+                -webkit-transform-origin: bottom center;
+            }
+            .ll-zooming{
+                -webkit-transform:scale(1.6);
+                opacity:0;
+                top:-24px;
+                -webkit-transition:800ms cubic-bezier(0.33,0.46,0.66,1);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="page" id="t_page" style="width: 100%;">
+
+            <div class="live-nav" id="t_nav_con" style="visibility: hidden; position: absolute; left: 0; width: 100%; background-color: #fff; z-index: 99; -webkit-transition:-webkit-transform 0.5s linear;">
+                <div class="live-info-nav t_nav_top" style="opacity: 1;">
+                    <div class="u-list" style="">
+                        <div class="item">
+                            <div class="li"><a href="">NBA</a></div>
+                            <div class="li"><a href="">NBA</a></div>
+                            <div class="li"><a href="">排名</a></div>
+                        </div>
+                        <div class="item">
+                            <div class="li"><a href="">战报</a></div>
+                            <div class="li"><a href="">图志</a></div>
+                            <div class="li"><a href="">策划</a></div>
+                        </div>
+                    </div>
+                    <div class="u-list" style="">
+                        <div class="item">
+                            <div class="li"><a href="">要闻</a></div>
+                            <div class="li"><a href="">图片</a></div>
+                            <div class="li"><a href="">视频</a></div>
+                        </div>
+                        <div class="item">
+                            <div class="li"><a href="">热火</a></div>
+                            <div class="li"><a href="">湖人</a></div>
+                            <div class="li"><a href="">火箭</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="link-info" id="t_nav_bottom">
+                    <a href="javascript:;"><img class="logo" src="http://gavinning.kf0309.3g.qq.com/webapp_html/info/nba3/images/logo.png" width="132" height="21" alt=""></a>
+                </div>
+            </div>
+
+            <header class="header live-header" id="t_header">
+                <h1 class="w-header-top" id="t_nav_btn">掌上NBA
+                    <i class="lv-arrow"></i>
+                </h1>
+                <nav id='homenav'>
+                    <a class="ilogo left" href="javascript:;" tag="lefttop"></a>
+                    <a class="icenter right t_icenter" href="javascript:;" tag="home"></a>
+                </nav>
+                <nav id='normalnav' style='display:none'>
+                    <a class="iedit left t_ask" href="javascript:;" tag="lefttop"></a>
+                    <a class="ihome right t_home" href="#home" tag="home"></a>
+                </nav>
+                   <nav id='asknav' style='display:none'>
+                        <a class="iback left t_back" href="javascript:;" tag="lefttop"></a>
+                        <a class="isure right t_asksumbit" href="javascript:;" tag="home"></a>
+                   </nav>
+            </header>
+
+            <div class="" id="wrapper"></div>
+        </div>
+
+        
+<script type="text/javascript">
+    var g_config = {
+        jsmap:{
+            'basepage': '/mods/basepage.js',
+            'iScroll': '/mods/iScroll.js',
+            'swipe': '/mods/swipe.js',
+            'slide': '/mods/slide.js',
+            'jqmobi': '/mods/jqmobi.js',
+            'pm': '/mods/pm.js',
+            'slide': '/mods/slide.js',
+            'txTpl': '/mods/txTpl.js',
+            'msgMod': '/mods/msgModule.js',
+            'tipsModule': '/mods/tipsModule.js',
+            'loadIngModule': '/mods/loadingModule.js',
+            'loadUtil': '/mods/loadUtil.js',
+            'loginMod': '/mods/loginModule.js',
+            'comment': '/mods/comment.js',
+            'utils': '/mods/utils.js',
+            'lawnchair': '/mods/lawnchair.js',
+            'init' : '/init.js',
+            'home1': '/pages/home1.js'
+        },
+        storeInc:{},
+        staticPath: '/infoapp/sportslib/nba/touch2/js',
+        testEnv: true
+    };
+</script>
+
+        <script type="text/javascript">
+            var moduleName = 'nba';
+            // 统计工具 本地存储
+            var StatisticTool = {
+                storage: window.localStorage,
+                storageKey: 'mqq_temp_statistic',
+                wordSplit: ',',
+                itemSplit: '#',
+                serverParam: 'statistic',
+                save: function(pageName, title, value) {
+                    if(!this.storage) return false;
+                    var oStr = moduleName + this.wordSplit + pageName + this.wordSplit + title + this.wordSplit + value,
+                            oldData = this.storage.getItem(this.storageKey),
+                            newData = oldData ? oldData + this.itemSplit + oStr : oStr;
+                    this.storage.setItem(this.storageKey, newData);
+                },
+                get: function() {
+                    if(!this.storage) return false;
+                    var data = this.storage.getItem(this.storageKey);
+                    this.clear();
+                    return data || false;
+                },
+                clear: function() {
+                    this.storage.removeItem(this.storageKey);
+                },
+                send: function(title, value) {
+                }
+            };
+
+            if(window.screen.height === 568){
+                var metaStr = "width=320,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no";
+                document.querySelector('meta[name="viewport"]').content = metaStr;
+            }
+
+            (function() {
+                var HAS_TOUCH = !!('ontouchstart' in window),
+                    START_EV = HAS_TOUCH ? 'touchstart': 'mousedown',
+                    END_EV = HAS_TOUCH ? 'touchend' : 'mouseup',
+                    TAP_EV = 'tap',
+                    DOUBLE_TAP_EV = 'doubletap',
+                    MAIN_MOUSE_BUTTON_DOWN = 0,
+                    MIN_TAP_INTERVAL = 400,
+                    MAX_TAP_MOVEMENT = 10,
+                    isCancel = false,
+                    lastTapTimestamp = 0,
+                    touchstartEvent,
+                    touchendEvent,
+                    touchstartX,
+                    touchstartY;
+                document.addEventListener(START_EV, function(e) {
+                    touchstartEvent = HAS_TOUCH ? e.touches[0] : e;
+                    if (HAS_TOUCH && e.touches.length > 1) isCancel = true;
+                    touchstartX = parseInt(touchstartEvent.pageX);
+                    touchstartY = parseInt(touchstartEvent.pageY);
+                }, false);
+                document.addEventListener(END_EV, function(e) {
+                    var absOffsetX, absOffsetY, tapInterval, eventName, ev;
+                    if (isCancel) {
+                        if (HAS_TOUCH && e.touches.length == 0) isCancel = false;
+                        return false;
+                    }
+                    if (!HAS_TOUCH && e.button !== undefined && e.button !== MAIN_MOUSE_BUTTON_DOWN) {
+                        return false;
+                    }
+                    touchendEvent = HAS_TOUCH ? e.changedTouches[0] : e;
+                    absOffsetX = Math.abs(touchendEvent.pageX - touchstartX);
+                    absOffsetY = Math.abs(touchendEvent.pageY - touchstartY);
+                    tapInterval = e.timeStamp - lastTapTimestamp;
+                    if (absOffsetX < MAX_TAP_MOVEMENT && absOffsetY < MAX_TAP_MOVEMENT) {
+                        eventName = tapInterval > MIN_TAP_INTERVAL ? TAP_EV : DOUBLE_TAP_EV;
+                        ev = document.createEvent('HTMLEvents');
+                        ev.initEvent(eventName, true, true);
+                        e.target.dispatchEvent(ev);
+                        lastTapTimestamp = e.timeStamp;
+                        isCancel = false;
+                    }
+                }, false);
+            })();
+        </script>
+
+
+        
+        <script type="text/javascript" src="/infoapp/sportslib/nba/touch2/js/mods/storeIncLoad.js"></script>
+        <script type="text/javascript" src="/infoapp/sportslib/nba/touch2/js/mods/core.js"></script>
+        <script type="text/javascript">
+            MT.config(g_config);
+            require('init');
+        </script>
+    </body>
+</html>

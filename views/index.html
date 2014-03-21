@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>拖拽组件</title>
+<meta name="viewport" content="width=device-width" />
+<meta name="author" content="gavinning" />
+<meta name="copyright" content="Copyright (c) 1998-2013 Tencent." />
+<meta name="description" content="标题" />
+<meta name="format-detection" content="telephone=no">
+<link rel="stylesheet" href="css/reset.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<link rel="stylesheet" href="css/nba3.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+<script src="js/cache.js"></script>
+</head>
+
+<body>
+<script src="js/txTpl.js"></script>
+<div class="lincoui-page">
+<header></header>
+<section class="lincoui-content">
+<aside class="lincoui-aside lincoui-aside-left">
+  <h1 class="lincoui-module-title">
+      <strong>组件 <em id="resetModule">[清理]</em></strong>
+      <nav id="getCite">
+          <li class="selected" cite="all">全部</li>
+          <li>常用</li>
+          <li cite="head">头部</li>
+          <li>列表</li>
+          <li>其他</li>
+      </nav>
+  </h1>
+  <div class="lincoui-module-area" id="catalog">
+      <div id="theModule"></div>
+    <div id="getModule" class="get-module">拖拽组件列表页到这里</div>
+  </div>
+</aside>
+<div id="drag">
+    <div class="newpage"></div>
+</div>
+<aside class="lincoui-aside lincoui-aside-right">
+    <div class="module-info">
+        <div class="u-title lincoui-module-title">属性面板</div>
+        <div class="u-content">
+            <div>组件类型：通用 - 头部</div>
+            <div>数据接口：<input type="text"></div>
+            <div class="u-ctrl">
+                <div class="lv-btn" id="dataView"> 预 览 </div>
+                <div class="tips" id="saveTips"></div>
+            </div>
+        </div>
+    </div>
+    <div class="lincoui-aside-inner">
+        <h1 class="lincoui-module-title">
+            <strong id="ProjectName"></strong>
+            <div class="create-new-project" id="buildNewPro">创建新工程</div>
+        </h1>
+        <div class="build-project">
+            <div class="project-info">
+                <ul class="u-list">
+                    <li>
+                        <input type="text" id="NewPage" placeholder="index">
+                        <button>New Page</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="mainPage" class="main-page">
+            <label for="mainPageR1" value="320">
+                <input id="mainPageR1" type="radio" name="manPage" checked="checked">320px
+            </label>
+            <label for="mainPageR2" value="480">
+                <input id="mainPageR2" type="radio" name="manPage">480px
+            </label>
+            <label for="mainPageR3" value="640">
+                <input id="mainPageR3" type="radio" name="manPage">640px
+            </label>
+            <label for="mainPageR4" value="100%">
+                <input id="mainPageR4" type="radio" name="manPage">auto
+            </label>
+        </div>
+        <div class="u-ctrl">
+            <div class="lv-btn" id="cssEditSave"> 保 存 </div>
+            <div class="tips" id="saveTips"></div>
+        </div>
+
+        <div class="list-created">
+            <div class="u-title">已创建的页面 <i id="downloadZip">打包下载</i></div>
+            <div class="u-list">
+                <ul id="listCreatedUl">
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+</section><!--content end-->
+<footer></footer>
+</div><!--page end-->
+
+<div class="lincoui-dialog" id="lincouiDialog">
+    <div class="u-dialog">
+        <div class="u-title">项目名称</div>
+        <div class="u-content">
+            <label for="">
+                <input class="u-input" id="ProjectNameCN" type="text" placeholder="请输入项目中文名称">
+                <input class="u-input" id="ProjectNameEN" type="text" placeholder="请输入项目英文名称">
+            </label>
+            <div class="lv-box">
+                <div class="lv-btn cancel" id="getProNameCancel">取消</div>
+                <div class="lv-btn sure" id="getProNameSure">确定</div>
+            </div>
+        </div>
+    </div>
+    <div class="u-mark"></div>
+</div>
+
+<script src="js/sea.js" data-main="base.js"></script>
+</body>
+</html>

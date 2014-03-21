@@ -1,0 +1,63 @@
+<%include inc/head%>
+<div class="dragpage">
+<header></header>
+<section class="dragcontent">
+
+<aside class="aside-left">
+	<h1 class="aside-title">
+		<strong>组件</strong>
+		<nav>
+			<li class="selected">全部</li>
+			<li>常用</li>
+			<li>图文</li>
+			<li>列表</li>
+			<li>交互</li>
+		</nav>
+	</h1>
+	<div class="aside-mod" id="catalog">
+		<div class="u-content">
+			<%include inc/mod%>
+		</div>
+	</div>
+</aside>
+<div id="drag">
+	<div class="newpage"></div>
+</div>
+<aside class="aside-right">
+	<div class="aside-inner">
+		<div class="get-module" id="getModule">拖拽配置文件到这里</div>
+		<div class="page-info" id="outFilePath">
+			<input type="text" id="PagePath" disabled value="">
+			<button>选择配置文件</button>
+			<input id="getConfig" class="get-file" type="file">
+		</div>
+		<div class="page-info" id="outFileName">
+			<input type="text" id="PageName" value="" placeholder="linco.html">
+			<button>文件名</button>
+		</div>
+		<div id="mainPage" class="main-page">
+			<label for="mainPageR1" value="320">
+				<input id="mainPageR1" type="radio" name="manPage" checked="checked">320px
+			</label>
+			<label for="mainPageR2" value="480">
+				<input id="mainPageR2" type="radio" name="manPage">480px
+			</label>
+			<label for="mainPageR3" value="640">
+				<input id="mainPageR3" type="radio" name="manPage">640px
+			</label>
+			<label for="mainPageR4" value="100%">
+				<input id="mainPageR4" type="radio" name="manPage">auto
+			</label>
+		</div>
+		<div class="u-ctrl">
+			<div class="lv-btn" id="cssEditSave"> 保 存 </div>
+			<div class="tips" id="saveTips"></div>
+		</div>
+	</div>
+</aside>
+
+
+</section><!--content end-->
+<footer></footer>
+</div><!--page end-->
+<%include inc/foot%>
